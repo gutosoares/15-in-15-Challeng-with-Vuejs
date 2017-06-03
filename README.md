@@ -9,7 +9,7 @@ Objetivo é a criação de 15 pequenos projetos em 15 semanas utilizando a bibli
 
 | Week | Project |
 |------|---------|
-|  01  | Hello World|
+|  01  |[ Hello World](./proj1)|
 |  02  | ToDo List|
 |  03  | Bookmarks|
 |  04  | Agenda|
