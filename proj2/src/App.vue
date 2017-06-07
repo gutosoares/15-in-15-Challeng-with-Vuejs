@@ -15,8 +15,6 @@ import inputTask from './components/inputTask.vue'
 import taskList from './components/taskList.vue'
 import { Task } from './models/Task.js'
 
-let tasks = []
-
 export default {
   name: 'app',
   components: {
@@ -25,7 +23,7 @@ export default {
   },
   data () {
     return {
-      tasks: tasks
+      tasks: []
     }
   },
   methods: {

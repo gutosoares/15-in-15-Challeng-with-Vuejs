@@ -1,8 +1,10 @@
 <template>
 	<ul class="todo-list">
-		<li v-for="todo in todoList" class="todo">
+		<li v-for="todo in sortedTasks" class="todo">
 			<div class="view">
-				<label>{{ todo.title }}</label>
+				<input type="checkbox" class="toggle" @click="completedTask(todo)">
+				<label :class="{ 'todo-completed': todo.completed }">{{ todo.title }}</label>
+				<!-- <label v-else>{{ todo.title }}</label> -->
 			</div>
 		</li>
 	</ul>
@@ -11,7 +13,22 @@
 <script>
 export default {
 	name: 'taskList',
-	props: ['todoList']
+	props: ['todoList'],
+	methods: {
+		completedTask(task) {
+			task.completed = !task.completed
+		}
+	},
+	computed: {
+		sortedTasks() {
+			let sorted = this.todoList
+			return sorted.sort(function (a, b) {
+				if(a.title < b.title) return -1
+				if(a.title > b.title) return 1
+				return 0
+			})
+		}
+	}
 }
 </script>
 
