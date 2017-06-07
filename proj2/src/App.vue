@@ -3,14 +3,20 @@
     <section class="todoapp">
       <header class="header">
         <h1>Tarefas</h1>
+        <input-task></input-task>
       </header>
     </section>
   </div>
 </template>
 
 <script>
+import inputTask from './components/inputTask.vue'
+
 export default {
   name: 'app',
+  components: {
+    'input-task': inputTask
+  },
   data () {
     return {
     }
