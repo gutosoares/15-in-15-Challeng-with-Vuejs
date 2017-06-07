@@ -3,7 +3,7 @@
     <section class="todoapp">
       <header class="header">
         <h1>Tarefas</h1>
-        <input-task></input-task>
+        <input-task @newTask="addTask"></input-task>
         <task-list :todo-list="tasks"></task-list>
       </header>
     </section>
@@ -16,13 +16,6 @@ import taskList from './components/taskList.vue'
 import { Task } from './models/Task.js'
 
 let tasks = []
-let task = new Task()
-task.completed = false
-task.title = 'Tarefa papapa'
-
-tasks.push(task)
-tasks.push(task)
-tasks.push(task)
 
 export default {
   name: 'app',
@@ -33,6 +26,11 @@ export default {
   data () {
     return {
       tasks: tasks
+    }
+  },
+  methods: {
+    addTask(task) {
+      this.tasks.push(task)
     }
   }
 }

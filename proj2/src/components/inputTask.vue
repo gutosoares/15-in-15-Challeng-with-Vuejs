@@ -19,6 +19,7 @@ export default {
 			let task = new Task()
 			task.completed = false
 			task.title = value
+			this.$emit('newTask', task)
 			$event.target.value = ''
 		}
 	}
