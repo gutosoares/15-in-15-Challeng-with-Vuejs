@@ -4,6 +4,7 @@
       <header class="header">
         <h1>Tarefas</h1>
         <input-task></input-task>
+        <task-list :todo-list="tasks"></task-list>
       </header>
     </section>
   </div>
@@ -11,14 +12,27 @@
 
 <script>
 import inputTask from './components/inputTask.vue'
+import taskList from './components/taskList.vue'
+import { Task } from './models/Task.js'
+
+let tasks = []
+let task = new Task()
+task.completed = false
+task.title = 'Tarefa papapa'
+
+tasks.push(task)
+tasks.push(task)
+tasks.push(task)
 
 export default {
   name: 'app',
   components: {
-    'input-task': inputTask
+    'input-task': inputTask,
+    'task-list': taskList
   },
   data () {
     return {
+      tasks: tasks
     }
   }
 }
